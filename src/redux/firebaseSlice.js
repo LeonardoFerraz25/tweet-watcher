@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import Firebase from '../firebase/base';
 
 export const slice = createSlice({
   name: 'firebase',
   initialState: {
-    firebase: [],
+    firebase: Firebase,
   },
   reducers: {
     changeFirebase(state, { payload }) {
