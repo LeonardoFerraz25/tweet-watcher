@@ -1,10 +1,12 @@
 import { ArrowsClockwise, ChatCircle, Heart } from 'phosphor-react';
-import React from 'react';
+import React, { useState } from 'react';
 
-export default function TweetCard() {
+
+export default function TweetCard({ name, userName, photo, tweets }) {
+  const [like, setLike] = useState(false);
   return (
     <div
-      className='border-b border-[#1d9bf0] pb-6'
+      className='border-b border-[#1d9bf0] pb-6 w-[80%] m-auto'
     >
        <div
         className='flex justify-start items-center h-20 mt-6 text-white '
@@ -14,34 +16,25 @@ export default function TweetCard() {
           >
             <img
               className='rounded-full w-full h-full'
-              src=""
-              alt=""
+              src={photo}
+              alt={name}
             />
           </div>
           <span
             className='text-xl font-bold'
           >
-            Ferraz
+            {name}
           </span>
           <span
             className='text-gray-300 ml-2'
           >
-            @leoferraz
-          </span>
-          <span
-            className='text-gray-300 ml-2'
-          >
-            ·
-          </span>
-          <span
-            className=' text-gray-300 ml-2'
-          >
-            Aug 1
+            {`@${userName}`}
           </span>
        </div>
           <p
             className='text-sm text-white w-[90%] m-auto'
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim placeat, recusandae odio repudiandae quidem cum quas rerum. Ea dignissimos dolor, perspiciatis aliquam exercitationem placeat eius quos maxime, at vel ad!
+          >
+            {tweets}
           </p>
           <div 
             className='flex justify-around items-center mt-4'
@@ -49,19 +42,23 @@ export default function TweetCard() {
             <span 
               className='flex items-center text-gray-300'
             >
-              <ChatCircle className='mr-2' size={22} color="#787b7d" weight="light" /> 2
+              <ChatCircle className='mr-2' size={22} color="#787b7d" weight="light" />
             </span>
             <span
               className='flex items-center text-gray-300'
             >
-              <ArrowsClockwise className='mr-2' size={22} color="#787b7d" weight="light" /> 10
+              <ArrowsClockwise className='mr-2' size={22} color="#787b7d" weight="light" />
             </span>
-            <span
+            <button
               className='flex items-center text-gray-300'
+              onClick={() => setLike(!like)}
             >
-              <Heart className='mr-2' size={22} color="#787b7d" weight="light" /> 
-              5
-            </span>
+              {like ? (
+                <Heart className='mr-2' size={22} color="#e0245e" weight="fill" />
+              ) : (
+                <Heart className='mr-2' size={22} color="#787b7d" weight="light" />
+              )}
+            </button>
             
           </div>
     </div>

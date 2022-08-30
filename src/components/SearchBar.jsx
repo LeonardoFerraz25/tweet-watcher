@@ -1,10 +1,19 @@
 import { MagnifyingGlass } from 'phosphor-react';
-import React from 'react';
-//import {  useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import getUserByName from '../helpers/getUserByName' ;
+import { changeIsSearching, changeSearchUser } from '../redux/UserSlice';
 
 export default function SearchBar() {
-  //const thumb = useSelector(state => state.store.user.user.photoURL);
+  const dispatch = useDispatch();
+  const [search, setSearch] = useState('');
+  const thumb = useSelector(state => state.store.user.photoURL);
 
+  const searchUser = async () => {
+    const user = await getUserByName(search);
+    dispatch(changeSearchUser(user.data));
+    dispatch(changeIsSearching(true));
+  }
   return (
     <div 
         className='flex justify-center items-center h-20 w-[70%] m-auto mt-6 relative'
@@ -14,7 +23,7 @@ export default function SearchBar() {
         >
           <img
             className='rounded-full w-full h-full'
-            src=""//{thumb}
+            src={thumb}
             alt=""
           />
         </div>
@@ -22,8 +31,12 @@ export default function SearchBar() {
           className='py-[10px] px-[52px] h-[39px] bg-zinc-700 w-[50%] mr-4 rounded-full text-[#fff] outline-none focus:border border-[#1d9bf0]'
           placeholder='Buscar no tweet watcher...'
           type="text"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
         />
-        <button>
+        <button
+          onClick={ searchUser }
+        >
           <MagnifyingGlass
             size={32}
             color="#fff"

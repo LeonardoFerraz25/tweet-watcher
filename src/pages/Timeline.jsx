@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import SearchResults from '../components/SearchResults';
 
 
-export default function Feed() {
+export default function Timeline() {
   const isSearching = useSelector(state => state.store.isSearching);
 
   return (
