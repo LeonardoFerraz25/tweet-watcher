@@ -1,4 +1,4 @@
-# Tweet-watcher 🐦
+# Tweet watcher 🐦
 
 Interface simplificado do twitter, onde os usuarios são capazes de logar com sua conta do twitter, ver seus Tweets, buscar popr usuarios e seus tweets.
 
