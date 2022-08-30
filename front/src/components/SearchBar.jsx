@@ -16,10 +16,10 @@ export default function SearchBar() {
   }
   return (
     <div 
-        className='flex justify-center items-center h-20 w-[70%] m-auto mt-6 relative'
+        className='flex justify-center items-center h-20 w-[70%] mobile:w-full  m-auto mt-6 relative'
       >
         <div
-          className='flex items-center border left-4 border-[#1d9bf0] m-6 h-18 w-18 bg-black rounded-full absolute outline outline-[#1d9bf0]'
+          className='flex items-center border left-4 border-[#1d9bf0] m-6 h-18 w-18 bg-black rounded-full desktop:absolute outline outline-[#1d9bf0]'
         >
           <img
             className='rounded-full w-full h-full'

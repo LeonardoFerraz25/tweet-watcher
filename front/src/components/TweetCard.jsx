@@ -9,7 +9,7 @@ export default function TweetCard({ name, userName, photo, tweets }) {
       className='border-b border-[#1d9bf0] pb-6 w-[80%] m-auto'
     >
        <div
-        className='flex justify-start items-center h-20 mt-6 text-white '
+        className='flex justify-start items-center h-20 mt-6 text-white'
        >
          <div
             className='flex items-center border border-[#1d9bf0] m-6  bg-black rounded-full'

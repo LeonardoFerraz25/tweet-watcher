@@ -36,7 +36,7 @@ export default function Tweets() {
       >tweets</h2>
       
       <div
-        className='flex flex-col items-center mt-12 mb-20 shrink-0 w-[50%] m-auto'
+        className='flex flex-col items-center mt-12 mb-20 shrink-0 w-[50%] mobile:w-full m-auto'
       >
         {
           pathname === '/timeline' && (

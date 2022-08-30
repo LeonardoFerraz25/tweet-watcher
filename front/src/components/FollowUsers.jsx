@@ -16,6 +16,7 @@ export default function FollowUsers() {
           <div
             key={index}
             className='flex items-center mt-12 mb-12 shrink-0 w-[50%] m-auto
+            mobile:w-[90%] mobile:mt-4 mobile:mb-4
             bg-zinc-700 rounded-lg p-4'
           >
             <div
