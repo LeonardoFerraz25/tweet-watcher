@@ -4,6 +4,7 @@ import SearchBar from '../components/SearchBar';
 import Tweets from '../components/Tweets';
 import { useSelector } from 'react-redux';
 import SearchResults from '../components/SearchResults';
+import Footer from '../components/Footer';
 
 
 export default function Feed() {
@@ -20,6 +21,7 @@ export default function Feed() {
           <Tweets />
         )
       }
+      <Footer />
     </div>
   );
 }

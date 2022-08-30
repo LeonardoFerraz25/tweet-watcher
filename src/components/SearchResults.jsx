@@ -12,7 +12,7 @@ export default function SearchResults() {
 
   const getTimeline = async (id) => {
     const timeline = await getUserTweet(id);
-    const tweetsNewFormat = timeline.data.map((item) => (
+    const tweetsNewFormat = timeline.data.slice(0, 10).map((item) => (
       {
         name: searchUser.name,
         userName: searchUser.username, 

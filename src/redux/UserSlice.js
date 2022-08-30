@@ -10,6 +10,7 @@ export const slice = createSlice({
     userTweets: [],
     searchUsers: [],
     isSearching: false,
+    usersFallow: [],
   },
   reducers: {
     changeFirebase(state, { payload }) {
@@ -33,6 +34,9 @@ export const slice = createSlice({
     changeUserTweets(state, { payload }) {
       return { ...state, userTweets: payload };
     },
+    changeUsersFallow(state, { payload }) {
+      return { ...state, usersFallow: payload };
+    }
   }
 });
 
@@ -42,6 +46,8 @@ export const { changeTweets } = slice.actions;
 export const { changeFeed } = slice.actions;
 export const { changeSearchUser } = slice.actions;
 export const { changeIsSearching } = slice.actions;
+export const { changeUserTweets } = slice.actions;
+export const { changeUsersFallow } = slice.actions;
 
 export const selectUser = state => state.store.User;
 export const selectProducts = state => state.store.firebase;
