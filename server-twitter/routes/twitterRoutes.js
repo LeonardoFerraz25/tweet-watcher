@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 
 const router = express.Router();
 
@@ -8,7 +9,7 @@ router.get('/tweets/:id', async (req, res) => {
   const tweet = await fetch(url, {
     method: 'GET',
     headers: {
-      Authorization: `Bearer AAAAAAAAAAAAAAAAAAAAAEdYgQEAAAAAtYtd2KQbp2rExsCC%2BvmV%2F346rSk%3D3npyjtHjJLRjCOz79JHk9TCv9THCp8FWeG8eDuLzUEIywiYI54`
+      Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
       }
     })
     .then(res => res.json())
@@ -24,7 +25,7 @@ router.get('/user/:name', async (req, res) => {
   const user = await fetch(url, {
     method: 'GET',
     headers: {
-      Authorization: `Bearer AAAAAAAAAAAAAAAAAAAAAEdYgQEAAAAAtYtd2KQbp2rExsCC%2BvmV%2F346rSk%3D3npyjtHjJLRjCOz79JHk9TCv9THCp8FWeG8eDuLzUEIywiYI54`
+      Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`
       }
     })
     .then(res => res.json())
@@ -40,7 +41,7 @@ router.get('/userById/:id', async (req, res) => {
   const user = await fetch(url, {
     method: 'GET',
     headers: {
-      Authorization: `Bearer AAAAAAAAAAAAAAAAAAAAAEdYgQEAAAAAtYtd2KQbp2rExsCC%2BvmV%2F346rSk%3D3npyjtHjJLRjCOz79JHk9TCv9THCp8FWeG8eDuLzUEIywiYI54`
+      Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`
       }
     })
     .then(res => res.json())
